@@ -1,47 +1,81 @@
 .my-card {
-  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  height: 40vh;
+  position: relative;
+  height: 45vh;
   border-radius: 10px;
- // border: solid;
- // border-color: $greyscale-2;
+  border: solid;
+  border-color: $greyscale-2;
   color: $greyscale-5;
   background-color: $white;
-  box-shadow: 2px px $greyscale-2;
-  padding: 20px;
+  padding: 10px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px $greyscale-3;
+  -moz-box-shadow:0 0 20px $greyscale-3;
+  box-shadow:0 0 20px $greyscale-3;
+  top:0;
+  bottom:0;
+  left:10px;
+  right:10px;
+  .button-white-horizontal {
+    font-size: 1.5rem;
+  }
+
 
   .growth {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 15px;
-    font-weight: 100;
+    font-size: 1.5rem;
     color: $green;
-    font-family: Roboto, sans-serif;
+    font-family: $dashboard-font;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 200;
+    }
   }
 
   .book-info{
-    margin: 25px 15px 0 15px;
+    margin: 8px;
+    margin-top: 45px;
+    p {
+      overflow: hidden;
+      font-size: 1.0rem;
+    }
+    width: 50%;
+    height: 26vh;
   }
 
   .info-bar{
-    position: absolute;
-    bottom: -10px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     font-size: 16px;
     margin-top: auto;
+    p {
+      font-size: 1.0rem;
+    }
   }
 
   .book-cover {
+    // margin-top: 20px;
+    // margin-left: 10px;
     border-radius: 5px;
-    height: 230px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
+  .image-container{
+    margin: 8px;
+    height: 30vh;
+    width: 50%;
+  }
 }

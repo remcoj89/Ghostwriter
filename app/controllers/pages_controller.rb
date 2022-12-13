@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
-  def home
-  end
-
   def user_balance
   end
 
@@ -15,5 +12,19 @@ class PagesController < ApplicationController
     else
       render "user_balance", status: :unprocessable_entity
     end
+  end
+
+
+  def wallets
+    @wallets = CashWallet.all
+  end
+
+  def our_mission
+  end
+
+  def self_publication
+  end
+
+  def learn_investment
   end
 end

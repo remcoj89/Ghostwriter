@@ -1,17 +1,19 @@
-<%= link_to "#", style: "text-decoration: none;", class: "dashboard" do %>
+<%= link_to book_shares_path(:book_id), style: "text-decoration: none;", class: "dashboard" do %>
   <div class="dashboard-container">
       <div class="portfolio-value">
         <div>
           <p>Wallet:</p>
         </div>
-        <div>
-          <p style="color: green";>€401,15 +8%</p>
-        </div>
+
       </div>
       <div class="grid-dashboard">
         <div class="grid-dashboard-item">
           <p>Available Cash</p>
-          <p>€51</p>
+          <% if current_user.balance %>
+            <p>€ <%= current_user.balance.round(2) %></p>
+          <% else %>
+            <p>0</p>
+          <% end %>
         </div>
         <div class="grid-dashboard-item">
           <p>Earnings</p>
@@ -19,7 +21,7 @@
         </div>
         <div class="grid-dashboard-item">
           <p>Badges</p>
-          <p>14 books</p>
+          <p><%= current_user.shares.count %> </p>
         </div>
       </div>
   </div>
